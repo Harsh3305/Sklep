@@ -1,0 +1,30 @@
+.header {
+  box-shadow: 3cm;
+  background-color: rgb(242, 236, 243);
+  align-items: center;
+  display: flex;
+}
+.logo {
+  display: flex;
+  /* margin: 10px; */
+  width: 80px;
+  height: 80px;
+}
+.search_icon {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin: 0.4cm;
+}
+.serch_box {
+  /* margin-left: 800px; */
+  display: flex;
+  width: 780px;
+  height: 30px;
+}
+.cart_icon {
+  width: 30px;
+  display: flex;
+  height: 30px;
+  margin: 0.4cm;
+}
