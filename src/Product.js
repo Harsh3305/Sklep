@@ -1,11 +1,14 @@
 import React from "react";
 import "./Product.css";
 import { Link } from "react-router-dom";
+import ProductDetail from "./ProductDetail";
+
 function Product({ id, title, price, category, description, image, ...rest }) {
   console.log("Extra", rest);
   return (
     <div className="product_box">
-      <Link to="/product/:{id}">
+      {/* <Link to="/product/:{id}"> */}
+      <Link to="/product_detail/:{id  }">
         <img
           src={image}
           className="product_image"
@@ -28,5 +31,19 @@ function Product({ id, title, price, category, description, image, ...rest }) {
     </div>
   );
 }
+
+const productDetail = ({ id, image, title, price, description, ...rest }) => {
+  return (
+    <div>
+      <ProductDetail
+        id={id}
+        image={image}
+        title={title}
+        price={price}
+        description={description}
+      />
+    </div>
+  );
+};
 
 export default Product;

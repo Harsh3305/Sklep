@@ -123,4 +123,6 @@ const AddBanner = ({ allProduct, ...rest }) => {
   );
 };
 
+const cart = ({ id, ...rest }) => {};
+
 export default App;

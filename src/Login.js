@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { useState, useEffect } from "react";
 
 const appStyle = {
   height: "250px",
@@ -61,7 +62,12 @@ const Form = ({ onSubmit }) => {
       username: usernameRef.current.value,
       password: passwordRef.current.value,
     };
+    var userName = usernameRef.current.value;
+    var password = passwordRef.current.value;
+
     onSubmit(data);
+
+    validate(userName, password);
   };
   return (
     <form style={formStyle} onSubmit={handleSubmit}>
@@ -76,9 +82,25 @@ const Form = ({ onSubmit }) => {
   );
 };
 
-// Usage example:
+const validate = ({ userName, password }) => {};
 
+// Usage example:
+var UserList;
 const App = () => {
+  const [UserData, setUserData] = useState([]);
+  // UserList = UserData;
+  useEffect(() => {
+    var result = () => {
+      fetch("https://fakestoreapi.com/users")
+        .then((res) => res.json())
+        .then((json) => {
+          console.log(json);
+          setUserData(json);
+        });
+    };
+    result();
+  }, []);
+
   const handleSubmit = (data) => {
     const json = JSON.stringify(data, null, 4);
     console.clear();
