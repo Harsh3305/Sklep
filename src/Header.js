@@ -11,26 +11,40 @@ function Header() {
           alt=""
         />
       </Link>
-      <input type="text" className="serch_box" />
-      <img
-        className="search_icon"
-        src="https://www.linkpicture.com/q/search_3.png"
-        alt=""
+      <input
+        type="text"
+        placeholder="Search Products, Brands and more"
+        className="serch_box"
       />
-      <Link to="/cart">
+
+      <Link to="/search_result">
         <img
-          className="cart_icon"
-          src="https://www.linkpicture.com/q/carts.png"
+          className="search_icon"
+          src="https://www.linkpicture.com/q/search_3.png"
           alt=""
         />
       </Link>
-      <Link to="/login">
-        <img
-          className="cart_icon"
-          src="https://www.linkpicture.com/q/user_2.png"
-          alt=""
-        />
-      </Link>
+      <>
+        <div className="cart_cointainer">
+          <Link to="/cart">
+            <div>
+              <img
+                className="cart_icon"
+                src="https://www.linkpicture.com/q/carts.png"
+                alt=""
+              ></img>
+              <span className="cart_items">0 items</span>
+            </div>
+          </Link>
+        </div>
+        <Link to="/login">
+          <img
+            className="login"
+            src="https://www.linkpicture.com/q/user_2.png"
+            alt=""
+          />
+        </Link>
+      </>
     </nav>
   );
 }

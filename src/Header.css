@@ -1,12 +1,16 @@
 .header {
   box-shadow: 3cm;
-  background-color: rgb(242, 236, 243);
+  background-color: #051935;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   align-items: center;
   display: flex;
 }
 .logo {
   display: flex;
   /* margin: 10px; */
+  object-fit: contain;
   width: 80px;
   height: 80px;
 }
@@ -19,6 +23,7 @@
 .serch_box {
   /* margin-left: 800px; */
   display: flex;
+  flex: 1;
   width: 780px;
   height: 30px;
 }
@@ -27,4 +32,19 @@
   display: flex;
   height: 30px;
   margin: 0.4cm;
+}
+.login {
+  width: 30px;
+  display: flex;
+  height: 30px;
+  margin: 0.4cm;
+}
+.cart_cointainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.cart_items {
+  display: flex;
+  color: white;
 }
