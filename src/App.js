@@ -2,6 +2,7 @@
 import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
+import Login from "./Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
             <h1>Checkout</h1>
           </Route>
           <Route path="/login">
-            <h1>Login</h1>
+            {/* <h1>Login</h1> */}
+            <Login />
           </Route>
           <Route path="/product_detail">
             <Header />
@@ -27,9 +29,24 @@ function App() {
             <Header />
             <h1>Cart</h1>
           </Route>
-          <Route path="/banner_click">
+          <Route path="/banner_click/electronics">
             <Header />
-            <h1>banner_click</h1>
+            <h1>banner_click electronics</h1>
+          </Route>
+
+          <Route path="/banner_click/women">
+            <Header />
+            <h1>banner_click women</h1>
+          </Route>
+
+          <Route path="/banner_click/men">
+            <Header />
+            <h1>banner_click men</h1>
+          </Route>
+
+          <Route path="/banner_click/jewelry">
+            <Header />
+            <h1>banner_click jewelry</h1>
           </Route>
           <Route path="/">
             <Header />

@@ -1,21 +1,25 @@
 .categoryFrame {
   box-shadow: 6cm;
   top: 0;
-  align-items: center;
+  /* align-items: center; */
   display: flex;
-  /* padding: 50px; */
-  /* padding-left: 650px; */
-  /* padding: 50px; */
-  margin: 50px;
+  /* margin: 50px; */
   /* padding: 50px; */
   justify-content: flex-end;
 }
 .categoryTile {
-  background-color: white;
-  margin: 10px;
+  /* background-color: white; */
   display: flex;
-  flex-direction: column;
-  /* z-index: 5; */
-  align-items: center;
-  justify-content: flex-end;
+  /* max-height: 500px; */
+  width: auto;
+  /* object-fit: contain; */
+  /* margin-bottom: 20px; */
+}
+
+img {
+  padding: 25px;
+  width: 380px;
+  height: auto;
+  object-fit: cover;
+  display: flex;
 }
