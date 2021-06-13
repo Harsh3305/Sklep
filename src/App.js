@@ -3,8 +3,24 @@ import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
 import Login from "./Login";
+import Product from "./Product";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 function App() {
+  const [productData, setProductData] = useState([]);
+
+  useEffect(() => {
+    var result = () => {
+      fetch("https://fakestoreapi.com/products")
+        .then((res) => res.json())
+        .then((json) => {
+          console.log(json);
+          setProductData(json);
+        });
+    };
+    result();
+  }, []);
+
   return (
     <Router>
       <div className="Sklep">
@@ -31,22 +47,36 @@ function App() {
           </Route>
           <Route path="/banner_click/electronics">
             <Header />
-            <h1>banner_click electronics</h1>
+            {/* ShowProductsIncategory(productData={productData}, category=
+            {"electronics"} ) */}
+            <ShowProductsIncategory
+              productData={productData}
+              category={"electronics"}
+            />
           </Route>
 
           <Route path="/banner_click/women">
             <Header />
-            <h1>banner_click women</h1>
+            <ShowProductsIncategory
+              productData={productData}
+              category={"women's clothing"}
+            />
           </Route>
 
           <Route path="/banner_click/men">
             <Header />
-            <h1>banner_click men</h1>
+            <ShowProductsIncategory
+              productData={productData}
+              category={"men's clothing"}
+            />
           </Route>
 
           <Route path="/banner_click/jewelry">
             <Header />
-            <h1>banner_click jewelry</h1>
+            <ShowProductsIncategory
+              productData={productData}
+              category={"jewelery"}
+            />
           </Route>
           <Route path="/">
             <Header />
@@ -55,7 +85,7 @@ function App() {
             </> */}
             {/* <add /> */}
             {/* <span className="bannerContainer"> */}
-            <AddBanner></AddBanner>
+            <AddBanner allProduct={productData}></AddBanner>
             {/* <AddBanner></AddBanner> */}
             {/* </span> */}
           </Route>
@@ -65,15 +95,30 @@ function App() {
   );
 }
 
-const AddBanner = ({ number_of_banner, ...rest }) => {
+const ShowProductsIncategory = ({ productData, category, ...rest }) => {
+  return (
+    <div>
+      {productData.map((ele) => {
+        return (
+          ele.category === category && (
+            <Product
+              id={ele.id}
+              title={ele.title}
+              price={ele.price}
+              image={ele.image}
+            />
+          )
+        );
+      })}
+    </div>
+  );
+};
+
+const AddBanner = ({ allProduct, ...rest }) => {
   // console.log(rest);
   return (
     <>
-      {/* <span className="bannerContainer"> */}
-      {/* <Home></Home> */}
-      <Home></Home>
-
-      {/* </span> */}
+      <Home allProducts={allProduct}></Home>
     </>
   );
 };
