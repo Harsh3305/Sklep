@@ -27,6 +27,10 @@ function App() {
             <Header />
             <h1>Cart</h1>
           </Route>
+          <Route path="/banner_click">
+            <Header />
+            <h1>banner_click</h1>
+          </Route>
           <Route path="/">
             <Header />
             {/* <>
