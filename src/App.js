@@ -29,8 +29,14 @@ function App() {
           </Route>
           <Route path="/">
             <Header />
-
-            <Home />
+            {/* <>
+              <Home />
+            </> */}
+            {/* <add /> */}
+            {/* <span className="bannerContainer"> */}
+            <AddBanner></AddBanner>
+            {/* <AddBanner></AddBanner> */}
+            {/* </span> */}
           </Route>
         </Switch>
       </div>
@@ -38,6 +44,17 @@ function App() {
   );
 }
 
-// function logIn() {}
+const AddBanner = ({ number_of_banner, ...rest }) => {
+  // console.log(rest);
+  return (
+    <>
+      {/* <span className="bannerContainer"> */}
+      {/* <Home></Home> */}
+      <Home></Home>
+
+      {/* </span> */}
+    </>
+  );
+};
 
 export default App;

@@ -1,0 +1,27 @@
+.product_image {
+  display: flex;
+  max-height: 500px;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+.product_price {
+  display: flex;
+  margin-top: 5px;
+}
+.add_to_cart {
+  display: flex;
+  max-height: 50px;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+.product_box {
+  background-color: white;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  align-items: center;
+  justify-content: flex-end;
+}
