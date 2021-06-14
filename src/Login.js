@@ -37,7 +37,7 @@ function Login({ usersDetail, ...rest }) {
     <div className="login_">
       <Link to="/">
         <img
-          alt=""
+          alt="logo"
           className="login_logo"
           src="https://firebasestorage.googleapis.com/v0/b/sklep-a919b.appspot.com/o/logo.png?alt=media&token=ac698d2f-0acb-468f-a6ee-1094be6c845b"
         ></img>
