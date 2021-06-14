@@ -17,9 +17,11 @@
 }
 
 img {
-  padding: 25px;
-  width: 380px;
+ 
+  width: 300px;
   height: auto;
   object-fit: cover;
   display: flex;
+  margin-right: 60px;
+  /* align-items:left ;  */
 }

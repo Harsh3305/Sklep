@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+/build  
 
 # misc
 .DS_Store
@@ -25,3 +25,7 @@ yarn-error.log*
 .firebase
 .firebaserc
 firebase.json
+firebase-debug.log
+
+## Github
+/.github

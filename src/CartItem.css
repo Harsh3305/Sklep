@@ -1,1 +1,31 @@
+.Titlevalue{
+    font-family: "Brush Script MT", Times, cursive;
+  color: rgb(0, 0, 0);
+  font-size: 80px;
+  text-align: center;
+  font-style: oblique;
+}
+.product_price_cart{
+  font-family: "Brush Script MT", Times, cursive;
+  color: rgb(0, 0, 0);
+  font-size: 80px;
+  text-align: center;
+  font-style: oblique;
+  margin-left: 650px;
+  
+}
+.delete{
+  width: 10px;
+  height: auto;
+  
+}
+.Cart{
+  background-color:white;
+  padding: 10px;
+  margin-top: 80px;
+  align-items: center;
+  margin-left: 220px;
+  margin-right:220px ;
+  border-radius: 25px;
 
+}

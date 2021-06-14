@@ -2,6 +2,16 @@
   margin: 0;
 }
 
+.my_cart {
+  font-family: "Brush Script MT", Times, cursive;
+    color: rgb(13, 168, 189);
+    font-size: 80px;
+    text-align: center;
+    font-style: oblique;
+    margin-top: 50px;
+    
+  }
+
 /* .bannerContainer {
   background-color: rgb(100, 186, 214);
   color: rgb(100, 186, 214);

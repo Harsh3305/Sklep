@@ -9,6 +9,7 @@ import CartItem from "./CartItem";
 import ProductDetail from "./ProductDetail";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+
 function App() {
   const [productData, setProductData] = useState([]);
 
@@ -154,18 +155,19 @@ function App() {
           </Route>
           <Route path="/cart">
             <Header />
+            <div  className="my_cart">My Cart</div>
             {/* <h1>Cart</h1> */}
             <Cart
               image={"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"}
-              price={"1"}
+              price={"9999"}
               id={"2"}
-              title={"3"}
+              title={"ABCD"}
             />
             <Cart
               image={"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"}
-              price={"1"}
-              id={"2"}
-              title={"3"}
+              price={"9999"}
+              id={"3"}
+              title={"ABCD"}
             />
           </Route>
           <Route path="/banner_click/electronics">
@@ -247,7 +249,15 @@ const AddBanner = ({ allProduct, ...rest }) => {
 };
 
 const Cart = ({ id, title, image, price, ...rest }) => {
-  return <CartItem id={id} title={title} image={image} price={price} />;
+  return (<div>
+    
+    <CartItem id={id} title={title} image={image} price={price} />
+    </div>);
+  
+    
+    
+ 
+ 
 };
 
 export default App;
