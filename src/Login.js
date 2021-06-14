@@ -1,116 +1,51 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { useState, useEffect } from "react";
+import "./Login.css";
+import { Link } from "react-router-dom";
 
-const appStyle = {
-  height: "250px",
-  display: "flex",
-};
+function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-const formStyle = {
-  margin: "auto",
-  padding: "10px",
-  border: "1px solid #c9c9c9",
-  borderRadius: "5px",
-  background: "#f5f5f5",
-  width: "220px",
-  display: "block",
-};
-
-const labelStyle = {
-  margin: "10px 0 5px 0",
-  fontFamily: "Arial, Helvetica, sans-serif",
-  fontSize: "15px",
-};
-
-const inputStyle = {
-  margin: "5px 0 10px 0",
-  padding: "5px",
-  border: "1px solid #bfbfbf",
-  borderRadius: "3px",
-  boxSizing: "border-box",
-  width: "100%",
-};
-
-const submitStyle = {
-  margin: "10px 0 0 0",
-  padding: "7px 10px",
-  border: "1px solid #efffff",
-  borderRadius: "3px",
-  background: "#3085d6",
-  width: "100%",
-  fontSize: "15px",
-  color: "white",
-  display: "block",
-};
-
-const Field = React.forwardRef(({ label, type }, ref) => {
-  return (
-    <div>
-      <label style={labelStyle}>{label}</label>
-      <input ref={ref} type={type} style={inputStyle} />
-    </div>
-  );
-});
-
-const Form = ({ onSubmit }) => {
-  const usernameRef = React.useRef();
-  const passwordRef = React.useRef();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const data = {
-      username: usernameRef.current.value,
-      password: passwordRef.current.value,
-    };
-    var userName = usernameRef.current.value;
-    var password = passwordRef.current.value;
-
-    onSubmit(data);
-
-    validate(userName, password);
+  const signIn = (e) => {
+    e.preventDeault();
   };
+
   return (
-    <form style={formStyle} onSubmit={handleSubmit}>
-      <Field ref={usernameRef} label="Username:" type="text" />
-      <Field ref={passwordRef} label="Password:" type="password" />
-      <div>
-        <button style={submitStyle} type="submit">
-          Submit
-        </button>
+    <div className="login">
+      <Link to="/">
+        <img
+          alt=""
+          className="login_logo"
+          src="https://firebasestorage.googleapis.com/v0/b/sklep-a919b.appspot.com/o/logo.png?alt=media&token=ac698d2f-0acb-468f-a6ee-1094be6c845b"
+        ></img>
+      </Link>
+      <h1>SignIn</h1>
+      <div className="login_container">
+        <form>
+          <h5>UserName</h5>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          ></input>
+          <h5>Password</h5>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          ></input>
+          <button type="submit" onClick={signIn}>
+            Log In
+          </button>
+          <p>
+            By continuing, you agree to Sklep's Conditions of Use and Privacy
+            Notice.
+          </p>
+        </form>
       </div>
-    </form>
-  );
-};
-
-const validate = ({ userName, password }) => {};
-
-// Usage example:
-var UserList;
-const App = () => {
-  const [UserData, setUserData] = useState([]);
-  // UserList = UserData;
-  useEffect(() => {
-    var result = () => {
-      fetch("https://fakestoreapi.com/users")
-        .then((res) => res.json())
-        .then((json) => {
-          console.log(json);
-          setUserData(json);
-        });
-    };
-    result();
-  }, []);
-
-  const handleSubmit = (data) => {
-    const json = JSON.stringify(data, null, 4);
-    console.clear();
-    console.log(json);
-  };
-  return (
-    <div style={appStyle}>
-      <Form onSubmit={handleSubmit} />
     </div>
   );
-};
-
-export default App;
+}
+export default Login;
