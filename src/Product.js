@@ -8,7 +8,7 @@ function Product({ id, title, price, category, description, image, ...rest }) {
   return (
     <div className="product_box">
       {/* <Link to="/product/:{id}"> */}
-      <Link to="/product_detail/:{id  }">
+      <Link to={`/product_detail/${id}`}>
         <img
           src={image}
           className="product_image"

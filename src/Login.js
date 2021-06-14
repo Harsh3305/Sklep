@@ -4,12 +4,47 @@ import { useState, useEffect } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 
-function Login() {
+function Login({ usersDetail, ...rest }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  console.log(usersDetail);
   const signIn = (e) => {
-    e.preventDeault();
+    e.preventDefault();
+    console.log(email);
+    console.log(password);
+
+    // return (
+    //   <div>
+    //     {usersDetail.map((ele) => {
+    //       return (
+    //         ele.username === email &&
+    //         ele.passwod === password &&
+    //         console.log("successful")
+    //       );
+    //     })}
+    //   </div>
+
+    usersDetail.map((ele) => {
+      console.log(ele);
+      // if (ele.username === { email }) {
+      //   console.log("Find");
+
+      //   return "find";
+      // }
+      console.log(ele.username === email && ele.password === password);
+      if (ele.username === email && ele.password === password) {
+        window.open("/", "");
+      }
+      // console.log();
+      // console.log(ele.username);
+      // if (ele.username === email) {
+      // console.log("find");
+      // }
+      return "Not find";
+      // return ele.username === { email } && ele.password === { password };
+    });
+    // );
   };
 
   return (
