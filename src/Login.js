@@ -13,7 +13,7 @@ function Login() {
   };
 
   return (
-    <div className="login">
+    <div className="login_">
       <Link to="/">
         <img
           alt=""
