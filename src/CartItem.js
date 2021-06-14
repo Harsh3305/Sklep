@@ -15,3 +15,4 @@ function CartItem() {
     </div>
   );
 }
+export default CartItem;

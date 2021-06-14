@@ -4,6 +4,7 @@ import Header from "./Header";
 import Home from "./Home";
 import Login from "./Login";
 import Product from "./Product";
+import CartItem from "./CartItem";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 function App() {
@@ -43,7 +44,8 @@ function App() {
           </Route>
           <Route path="/cart">
             <Header />
-            <h1>Cart</h1>
+            {/* <h1>Cart</h1> */}
+            <Cart />
           </Route>
           <Route path="/banner_click/electronics">
             <Header />
@@ -123,6 +125,8 @@ const AddBanner = ({ allProduct, ...rest }) => {
   );
 };
 
-const cart = ({ id, ...rest }) => {};
+const Cart = ({ id, ...rest }) => {
+  return <CartItem />;
+};
 
 export default App;
