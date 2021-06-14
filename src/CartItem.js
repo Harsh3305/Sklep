@@ -1,17 +1,18 @@
 import React from "react";
 
-function CartItem({id,title, }) {
+function CartItem({ id, title, image, price, ...rest }) {
   return (
     <div className="Cart">
       <img
-        alt="product_icon"
-        src="https://cdn.discordapp.com/attachments/853310564758978574/853710987726946394/trash.png"
-      />
-      <h1>{}</h1>
-      <img
-        alt="delete item"
-        src="https://cdn.discordapp.com/attachments/853310564758978574/853710987726946394/trash.png"
-      />
+        src={image}
+        className="product_image"
+        alt="retrieval basket transparent png hd @transparentpng.com"
+      ></img>
+      <p>{title}</p>
+      <p className="product_price">
+        <small>$</small>
+        <strong>{price}</strong>
+      </p>
     </div>
   );
 }

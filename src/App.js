@@ -2,6 +2,7 @@
 import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
+import Welcome from "./Welcome";
 import Login from "./Login";
 import Product from "./Product";
 import CartItem from "./CartItem";
@@ -45,8 +46,12 @@ function App() {
             <Header />
             <h1>Checkout</h1>
           </Route>
+          <Route path="/Welcome">
+            {/* <Header /> */}
+            {/* <h1></h1> */}
+            <Welcome />
+          </Route>
           <Route path="/login">
-            {/* <h1>Login</h1> */}
             <Login usersDetail={UsersData} />
           </Route>
 
@@ -150,7 +155,18 @@ function App() {
           <Route path="/cart">
             <Header />
             {/* <h1>Cart</h1> */}
-            <Cart />
+            <Cart
+              image={"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"}
+              price={"1"}
+              id={"2"}
+              title={"3"}
+            />
+            <Cart
+              image={"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"}
+              price={"1"}
+              id={"2"}
+              title={"3"}
+            />
           </Route>
           <Route path="/banner_click/electronics">
             <Header />
@@ -230,8 +246,8 @@ const AddBanner = ({ allProduct, ...rest }) => {
   );
 };
 
-const Cart = ({ id, ...rest }) => {
-  return <CartItem />;
+const Cart = ({ id, title, image, price, ...rest }) => {
+  return <CartItem id={id} title={title} image={image} price={price} />;
 };
 
 export default App;

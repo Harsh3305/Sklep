@@ -2,50 +2,36 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { useState, useEffect } from "react";
 import "./Login.css";
+import App from "./App";
 import { Link } from "react-router-dom";
 
 function Login({ usersDetail, ...rest }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+  const [email, setEmail] = useState("johnd");
+  const [password, setPassword] = useState("m38rmF$");
+  const [user, setUser] = useState(false);
   console.log(usersDetail);
-  const signIn = (e) => {
-    e.preventDefault();
-    console.log(email);
-    console.log(password);
+  const [path, setPath] = useState("/login");
 
-    // return (
-    //   <div>
-    //     {usersDetail.map((ele) => {
-    //       return (
-    //         ele.username === email &&
-    //         ele.passwod === password &&
-    //         console.log("successful")
-    //       );
-    //     })}
-    //   </div>
+  useEffect(() => {
+    setPath("/");
+  }, [user]);
 
-    usersDetail.map((ele) => {
-      console.log(ele);
-      // if (ele.username === { email }) {
-      //   console.log("Find");
+  // const signIn = (e) => {
+  //   e.preventDefault();
+  //   console.log(email);
+  //   console.log(password);
 
-      //   return "find";
-      // }
-      console.log(ele.username === email && ele.password === password);
-      if (ele.username === email && ele.password === password) {
-        window.open("/", "");
-      }
-      // console.log();
-      // console.log(ele.username);
-      // if (ele.username === email) {
-      // console.log("find");
-      // }
-      return "Not find";
-      // return ele.username === { email } && ele.password === { password };
-    });
-    // );
-  };
+  //   usersDetail.map((ele) => {
+  //     console.log(ele);
+
+  //     if (ele.username === email && ele.password === password) {
+  //       console.log(ele.username === email && ele.password === password);
+  //       setUser(user || true);
+  //     } else {
+  //       console.log(user);
+  //     }
+  //   });
+  // };
 
   return (
     <div className="login_">
@@ -71,9 +57,10 @@ function Login({ usersDetail, ...rest }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></input>
-          <button type="submit" onClick={signIn}>
+          <Link to={"/"}>
             Log In
-          </button>
+            {/* <button type="submit">Log In</button> */}
+          </Link>
           <p>
             By continuing, you agree to Sklep's Conditions of Use and Privacy
             Notice.
